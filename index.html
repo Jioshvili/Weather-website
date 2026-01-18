@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkySense - ამინდის აპლიკაცია</title>
+    <link rel="shortcut icon" href="Icon.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header id="main-header">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-cloud-sun"></i>
+            <h1>SkySense</h1>
+          </div>
+
+          <nav class="desktop-nav">
+            <ul>
+              <li><a href="#home" class="nav-link active">მთავარი</a></li>
+              <li><a href="#forecast-section" class="nav-link">პროგნოზი</a></li>
+              <li><a href="#cities" class="nav-link">ქალაქები</a></li>
+              <li><a href="#about" class="nav-link">შესახებ</a></li>
+            </ul>
+          </nav>
+
+          <div class="search-container">
+            <input
+              type="text"
+              id="city-search"
+              placeholder="ქალაქის ძებნა..."
+            />
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+          </div>
+
+          <button class="burger-menu" id="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-nav">
+          <ul>
+            <li><a href="#home" class="nav-link active">მთავარი</a></li>
+            <li><a href="#forecast-section" class="nav-link">პროგნოზი</a></li>
+            <li><a href="#cities" class="nav-link">ქალაქები</a></li>
+            <li><a href="#about" class="nav-link">შესახებ</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section class="current-weather" id="home">
+          <div class="location-info">
+            <h2 id="current-city">თბილისი</h2>
+            <p id="current-date">იტვირთება...</p>
+          </div>
+
+          <div class="weather-main">
+            <div class="temp-display">
+              <div class="current-temp">
+                <span id="current-temp">--</span>
+                <sup>°C</sup>
+              </div>
+              <div class="weather-desc">
+                <i class="fas fa-cloud" id="weather-icon"></i>
+                <p id="weather-description">იტვირთება...</p>
+              </div>
+            </div>
+
+            <div class="temp-range">
+              <p>მაქს: <span id="high-temp">--°</span></p>
+              <p>მინ: <span id="low-temp">--°</span></p>
+            </div>
+          </div>
+
+          <div class="motivation-message">
+            <p id="motivation-text">იტვირთება...</p>
+          </div>
+        </section>
+
+        <section class="hourly-forecast">
+          <h3><i class="fas fa-clock"></i> დღის პროგნოზი</h3>
+          <div class="hours-container" id="hourly-data">
+            <div class="loading">იტვირთება...</div>
+          </div>
+        </section>
+
+        <section class="weekly-forecast" id="forecast-section">
+          <div class="section-header">
+            <h3><i class="fas fa-calendar-alt"></i> 5-დღიანი პროგნოზი</h3>
+          </div>
+
+          <div class="forecast-cards" id="weekly-data">
+            <div class="loading">იტვირთება...</div>
+          </div>
+        </section>
+
+        <section class="weather-details" id="details">
+          <h3><i class="fas fa-chart-bar"></i> ამინდის დეტალები</h3>
+          <div class="details-grid">
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-tint"></i>
+              </div>
+              <div class="detail-info">
+                <p class="detail-title">ტენიანობა</p>
+                <p class="detail-value"><span id="humidity">--</span></p>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-wind"></i>
+              </div>
+              <div class="detail-info">
+                <p class="detail-title">ქარის სიჩქარე</p>
+                <p class="detail-value">
+                  <span id="wind-speed">--</span> კმ/სთ
+                </p>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-sun"></i>
+              </div>
+              <div class="detail-info">
+                <p class="detail-title">UV ინდექსი</p>
+                <p class="detail-value"><span id="uv-index">--</span></p>
+              </div>
+            </div>
+
+            <div class="detail-card">
+              <div class="detail-icon">
+                <i class="fas fa-cloud-rain"></i>
+              </div>
+              <div class="detail-info">
+                <p class="detail-title">წვიმის შანსი</p>
+                <p class="detail-value"><span id="rain-chance">--</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="other-cities" id="cities">
+          <div class="section-header">
+            <h3><i class="fas fa-globe-americas"></i> სხვა ქალაქები</h3>
+            <div class="refresh-cities">
+              <button class="refresh-btn" id="refresh-cities-btn">
+                <i class="fas fa-sync-alt"></i> განახლება
+              </button>
+            </div>
+          </div>
+
+          <div class="cities-grid" id="cities-data">
+            <div class="loading">იტვირთება...</div>
+          </div>
+        </section>
+
+        <section class="about-section" id="about">
+          <h3><i class="fas fa-info-circle"></i> აპლიკაციის შესახებ</h3>
+          <div class="about-content">
+            <p>
+              ეს არის ამინდის პროგნოზის აპლიკაცია, რომელიც იყენებს
+              OpenWeatherMap API-ს რეალური დროის მონაცემების მისაღებად.
+            </p>
+            <div class="features">
+              <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <p>რეალური დროის მონაცემები</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                <p>რესპონსიული დიზაინი</p>
+              </div>
+              <div class="feature">
+                <i class="fas fa-cloud-sun"></i>
+                <p>5-დღიანი პროგნოზი</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer">
+        <p>© 2026 SkySense ამინდის აპლიკაცია. ყველა უფლება დაცულია.</p>
+        <p>
+          API:
+          <a href="https://openweathermap.org/api" target="_blank"
+            >OpenWeatherMap</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
